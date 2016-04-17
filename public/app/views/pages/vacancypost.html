@@ -1,0 +1,33 @@
+<div class="container">
+  <h2 class="text-center">Create your vacancy here</h2>
+  <div class="row div col-sm-6 col-sm-offset-3">
+    <div class="jumbotron">
+    <form ng-submit="job.saveVacancy()">
+      <div class="form-group">
+        <label>Vacancy title</label>
+        <input type="text" class="form-control" placeholder="Title" ng-model="job.vacancydata.title">
+      </div>
+      <div class="form-group">
+        <label>Skills</label>
+        <input type="text" placeholder="skills" class="form-control" ng-model="job.vacancydata.skills">
+      </div>
+      <div class="form-group">
+        <label>Compensation</label>
+          <input type="text" class="form-control" placeholder="compensation" ng-model="job.vacancydata.compensation">
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea rows="3" type="text" class="form-control" placeholder="Description" ng-model="job.vacancydata.description"></textarea>
+      </div>
+      <button type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
+    </form>
+    <div class="row show-hide-message" ng-show="job.message">
+      <div class="col-sm-6 col-sm-offset-2">
+        <div class="alert alert-info">
+          {{ job.message }}
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>

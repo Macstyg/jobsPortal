@@ -1,0 +1,22 @@
+<h1 class="text-center">Here you can see all the vacancys</h1>
+<div class="container">
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="form-group">
+      <label>Search:</label>
+      <input type="text" name="name" ng-model="main.vacancySearch.title" placeholder="search for a vacancy..." class="form-control">
+    </div>
+    <div class="panel panel-success" ng-repeat="vacancy in main.vacancys | filter: main.vacancySearch">
+      <div class="panel-heading">
+        <h1 class="panel-title">{{ vacancy.title}} <span class="label label-info">{{ vacancy.skills }}</span></h1>
+      </div>
+      <div class="panel-body">
+        <a ng-href="/vacancys/{{vacancy._id}}">
+          {{ vacancy.description }}
+        </a>
+        <div>Compensation: {{ vacancy.compensation }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
