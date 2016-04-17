@@ -12,6 +12,12 @@ mongoose
   .connection.on('open', () => {
     console.log('Connected to DB');
   });
+  mongoose.connection.on('error', (err) => {
+    console.log(`Mongoose connection error: ${err}`);
+  });
+  mongoose.connection.on('disconnected', () => {
+    console.log('Mongoose connection disconnected');
+  });
 
 app
   .use(morgan('dev'))
