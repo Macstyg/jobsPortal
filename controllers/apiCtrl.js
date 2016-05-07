@@ -16,6 +16,9 @@ apiRouter
     .post((req, res) => {
       var vacancy = new Vacancy();
 
+      vacancy.companyname = req.body.companyname;
+      vacancy.companyemail = req.body.companyemail;
+      vacancy.posted = req.body.posted;
       vacancy.skills = req.body.skills;
       vacancy.compensation = req.body.compensation;
       vacancy.title = req.body.title;
