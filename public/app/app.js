@@ -27,7 +27,7 @@ angular.module('myApp', ['app.routes'])
 
 })
 
-.controller('singleVacancyController', function ($http, $routeParams) {
+.controller('singleVacancyController', function($http, $routeParams) {
   var vm = this;
 
   vm.singleVacancy = function(){
@@ -37,4 +37,16 @@ angular.module('myApp', ['app.routes'])
       })
   }
   vm.singleVacancy();
+})
+
+.controller('companyPageController', function($http, $routeParams) {
+  var vm = this;
+
+  vm.companypage = function() {
+    $http.get('/api/jobs/' + $routeParams.companyname)
+      .then(function(response) {
+        vm.companypage = response.data;
+      })
+  }
+  vm.companypage();
 })

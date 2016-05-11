@@ -11,6 +11,9 @@
         <h1 class="panel-title">{{ vacancy.title}} <span class="label label-info">{{ vacancy.skills }}</span></h1>
       </div>
       <div class="panel-body">
+        <div>
+          <a ng-href="/company/{{ vacancy.companyname }}">{{ vacancy.companyname}}</a>
+        </div>
         <a ng-href="/vacancys/{{vacancy._id}}">
           {{ vacancy.description }}
         </a>

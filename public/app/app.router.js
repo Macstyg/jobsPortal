@@ -17,6 +17,12 @@ angular.module('app.routes', ['ngRoute'])
       templateUrl: 'app/views/pages/singlevacancy.html',
       controller: 'singleVacancyController',
       controllerAs: 'single'
+    })
+
+    .when('/companies/:companyname', {
+      templateUrl: 'app/views/pages/companypage.html',
+      controller: 'companyPageController',
+      controllerAs: 'company'
     });
 
     $locationProvider.html5Mode(true);
